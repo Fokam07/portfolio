@@ -13,7 +13,6 @@
 
         html, body {
             width: 100%;
-            height: 100%;
             background: #ffffff;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
@@ -29,332 +28,287 @@
 
         .print-button {
             display: inline-block;
-            padding: 14px 32px;
-            background: linear-gradient(135deg, #2563EB, #1e40af);
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #0082cc, #0066aa);
             color: white;
             border: none;
-            border-radius: 8px;
-            font-size: 1rem;
+            border-radius: 6px;
+            font-size: 0.95rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 130, 204, 0.3);
         }
 
         .print-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+            box-shadow: 0 6px 20px rgba(0, 130, 204, 0.4);
         }
 
         .cv-container {
             width: 100%;
             max-width: 210mm;
+            height: 297mm;
             margin: 0 auto;
             background: #ffffff;
             color: #1f2937;
-            line-height: 1.6;
+            line-height: 1.5;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        /* HEADER - PHOTO EN AVANT */
-        .cv-header {
-            background: linear-gradient(135deg, #0f172a 0%, #1e40af 50%, #2563eb 100%);
-            color: white;
-            padding: 40px;
             display: grid;
-            grid-template-columns: 180px 1fr;
-            gap: 40px;
-            align-items: start;
-            position: relative;
+            grid-template-columns: 280px 1fr;
             overflow: hidden;
         }
 
-        .cv-header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 400px;
-            height: 400px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 50%;
-            z-index: 1;
+        /* SIDEBAR GAUCHE */
+        .cv-sidebar {
+            background: linear-gradient(135deg, #d4e7f7 0%, #e8f2fa 100%);
+            padding: 30px 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
         }
 
-        .cv-photo-container {
-            position: relative;
-            z-index: 2;
+        .cv-photo-section {
+            display: flex;
+            justify-content: center;
         }
 
         .cv-photo {
-            width: 180px;
-            height: 180px;
-            border-radius: 16px;
+            width: 140px;
+            height: 140px;
+            border-radius: 12px;
             object-fit: cover;
-            border: 5px solid white;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+            border: 4px solid #0082cc;
+            box-shadow: 0 8px 20px rgba(0, 130, 204, 0.2);
             display: block;
         }
 
-        .cv-header-info {
-            position: relative;
-            z-index: 2;
-        }
-
-        .cv-header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 8px;
-            font-weight: 900;
-            letter-spacing: -1px;
-            line-height: 1.1;
-        }
-
-        .cv-title {
-            font-size: 1.3rem;
-            color: #fbbf24;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .cv-search {
-            font-size: 0.95rem;
-            color: #bfdbfe;
-            font-weight: 600;
-            margin-bottom: 14px;
-            padding: 10px 14px;
-            background: rgba(255, 255, 255, 0.12);
-            border-radius: 8px;
-            border-left: 4px solid #fbbf24;
-        }
-
-        .cv-bio {
-            font-size: 0.95rem;
-            color: #dbeafe;
-            margin-bottom: 16px;
-            line-height: 1.7;
-        }
-
-        .cv-contact {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            font-size: 0.85rem;
-            color: #dbeafe;
-        }
-
-        .cv-contact span {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .cv-contact a {
-            color: #93c5fd;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .cv-contact a:hover {
-            text-decoration: underline;
-        }
-
-        /* BODY */
-        .cv-body {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 45px;
-            padding: 45px;
-            background: #ffffff;
-        }
-
-        .cv-section {
-            margin-bottom: 32px;
-        }
-
-        .cv-section:last-child {
+        .sidebar-section {
             margin-bottom: 0;
         }
 
-        .cv-section-title {
-            font-size: 1.35rem;
+        .sidebar-title {
+            font-size: 0.85rem;
             font-weight: 800;
-            color: #0f172a;
-            border-bottom: 4px solid #2563eb;
-            padding-bottom: 12px;
-            margin-bottom: 20px;
-            display: inline-block;
+            color: #0082cc;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #0082cc;
+        }
+
+        .contact-info {
+            font-size: 0.8rem;
+            line-height: 1.8;
+        }
+
+        .contact-label {
+            font-weight: 700;
+            color: #0082cc;
+            font-size: 0.75rem;
+            text-transform: uppercase;
             letter-spacing: 0.5px;
+            margin-top: 8px;
+            margin-bottom: 2px;
         }
 
-        .cv-item {
-            margin-bottom: 22px;
-            padding-bottom: 18px;
-            border-bottom: 1px solid #e5e7eb;
+        .contact-value {
+            color: #333;
+            font-weight: 500;
         }
 
-        .cv-item:last-child {
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            font-size: 0.8rem;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            padding: 6px 12px;
+            background: white;
+            border: 1.5px solid #0082cc;
+            border-radius: 16px;
+            color: #0082cc;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .languages-list,
+        .qualities-list {
+            font-size: 0.8rem;
+            line-height: 1.8;
+        }
+
+        .language-item,
+        .quality-item {
+            color: #333;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        /* CONTENU PRINCIPAL */
+        .cv-main {
+            padding: 30px 35px;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+        .cv-main::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .cv-main::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .cv-main::-webkit-scrollbar-thumb {
+            background: #0082cc;
+            border-radius: 3px;
+        }
+
+        .cv-header-main {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .cv-main h1 {
+            font-size: 2.2rem;
+            color: #0082cc;
+            font-weight: 900;
+            line-height: 1.2;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .cv-main h2 {
+            font-size: 0.9rem;
+            color: #0082cc;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 6px;
+        }
+
+        .cv-job-title {
+            font-size: 1.1rem;
+            color: #0082cc;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-decoration: underline;
+            text-decoration-color: #0082cc;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 4px;
+        }
+
+        .cv-bio {
+            font-size: 0.85rem;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .cv-search {
+            font-size: 0.8rem;
+            color: #0082cc;
+            font-weight: 700;
+            margin-bottom: 12px;
+            padding: 8px 12px;
+            background: rgba(0, 130, 204, 0.08);
+            border-left: 3px solid #0082cc;
+            border-radius: 3px;
+        }
+
+        .section {
+            margin-bottom: 18px;
+        }
+
+        .section-title {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: #0082cc;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #0082cc;
+        }
+
+        .job-item {
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .job-item:last-child {
             border-bottom: none;
             padding-bottom: 0;
             margin-bottom: 0;
         }
 
-        .cv-item-header {
+        .job-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
+            gap: 10px;
         }
 
-        .cv-item h3 {
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: #0f172a;
-            margin: 0;
-        }
-
-        .cv-date {
-            font-size: 0.8rem;
-            color: white;
-            font-weight: 700;
-            background: linear-gradient(135deg, #2563eb, #1e40af);
-            padding: 5px 12px;
-            border-radius: 5px;
-            flex-shrink: 0;
-            margin-left: 10px;
-        }
-
-        .cv-location {
+        .job-title {
             font-size: 0.9rem;
-            font-weight: 600;
-            color: #2563eb;
-            margin: 6px 0;
+            font-weight: 700;
+            color: #1f2937;
         }
 
-        .cv-description {
-            font-size: 0.9rem;
+        .job-date {
+            font-size: 0.75rem;
             color: #6b7280;
-            margin: 8px 0;
-            line-height: 1.6;
+            font-weight: 600;
+            flex-shrink: 0;
         }
 
-        .cv-skills-list {
-            list-style: none;
-            padding: 0;
-            margin: 10px 0 0 0;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8px;
+        .job-company {
             font-size: 0.85rem;
-        }
-
-        .cv-skills-list li {
-            padding: 7px 12px;
-            background: linear-gradient(135deg, #dbeafe, #f0f9ff);
-            border-left: 4px solid #2563eb;
-            color: #0f172a;
-            font-weight: 600;
-        }
-
-        /* COMPÉTENCES */
-        .cv-skill-category {
-            margin-bottom: 18px;
-        }
-
-        .cv-skill-category h4 {
-            font-size: 1rem;
-            font-weight: 800;
-            color: #0f172a;
-            margin: 0 0 10px 0;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #2563eb;
-        }
-
-        .cv-skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .cv-skill-tags span {
-            display: inline-block;
-            padding: 7px 14px;
-            background: linear-gradient(135deg, #dbeafe, #f0f9ff);
-            border: 1.5px solid #2563eb;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: #0f172a;
-            white-space: nowrap;
-        }
-
-        /* QUALITÉS */
-        .cv-qualities {
-            display: grid;
-            gap: 12px;
-        }
-
-        .cv-quality {
-            display: flex;
-            gap: 12px;
-            padding: 12px;
-            background: linear-gradient(135deg, #f0f9ff, #f3f4f6);
-            border-radius: 8px;
-            border-left: 4px solid #2563eb;
-        }
-
-        .cv-quality-icon {
-            font-size: 1.5rem;
-            flex-shrink: 0;
-            line-height: 1;
-        }
-
-        .cv-quality-title {
+            color: #0082cc;
             font-weight: 700;
-            color: #0f172a;
-            margin: 0;
-            font-size: 0.95rem;
+            margin: 3px 0;
         }
 
-        .cv-quality-desc {
+        .job-desc {
+            font-size: 0.8rem;
             color: #6b7280;
+            line-height: 1.5;
             margin: 4px 0 0 0;
-            font-size: 0.85rem;
         }
 
-        /* DISPONIBILITÉ */
-        .cv-availability {
-            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
-            border: 2px solid #2563eb;
-            border-radius: 8px;
-            padding: 18px;
-            font-size: 0.9rem;
+        .bullet-list {
+            font-size: 0.8rem;
+            color: #6b7280;
+            line-height: 1.5;
+            margin: 4px 0 0 16px;
         }
 
-        .cv-availability p {
-            margin: 10px 0;
-            color: #0f172a;
+        .bullet-list li {
+            margin-bottom: 2px;
+        }
+
+        .availability {
+            background: linear-gradient(135deg, #e8f4f8, #f0f8fb);
+            border-left: 4px solid #0082cc;
+            padding: 12px;
+            font-size: 0.8rem;
+            color: #333;
             font-weight: 600;
+            border-radius: 3px;
+            margin-top: 8px;
         }
 
-        .cv-availability strong {
-            color: #1e40af;
-        }
-
-        /* FOOTER */
-        .cv-footer {
-            background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%);
-            color: white;
-            padding: 25px 45px;
-            text-align: center;
-            border-top: 4px solid #2563eb;
-            font-size: 0.85rem;
-        }
-
-        .cv-footer p {
-            margin: 6px 0;
-        }
-
-        /* ===== IMPRESSION / PDF ===== */
+        /* IMPRESSION */
         @media print {
             body {
                 margin: 0;
@@ -368,153 +322,59 @@
 
             .cv-container {
                 max-width: 100%;
+                height: 297mm;
                 box-shadow: none;
                 margin: 0;
                 padding: 0;
+                page-break-after: avoid;
             }
 
-            .cv-header,
-            .cv-footer {
+            .cv-main {
+                overflow-y: visible;
+            }
+
+            .cv-main::-webkit-scrollbar {
+                display: none;
+            }
+
+            @page {
+                size: A4 portrait;
+                margin: 0;
+            }
+
+            .cv-sidebar {
+                background: linear-gradient(135deg, #d4e7f7 0%, #e8f2fa 100%);
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .cv-header-main {
                 page-break-inside: avoid;
             }
 
-            .cv-section,
-            .cv-item {
+            .section {
                 page-break-inside: avoid;
             }
 
-            /* Force les couleurs et gradients en PDF */
-            .cv-header {
-                background: linear-gradient(135deg, #0f172a 0%, #1e40af 50%, #2563eb 100%) !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-                color-adjust: exact !important;
-            }
-
-            .cv-footer {
-                background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%) !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-                color-adjust: exact !important;
-            }
-
-            .cv-date {
-                background: linear-gradient(135deg, #2563eb, #1e40af) !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-                color-adjust: exact !important;
-                color: white !important;
-            }
-
-            .cv-skills-list li {
-                background: linear-gradient(135deg, #dbeafe, #f0f9ff) !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-                color-adjust: exact !important;
-                border-left: 4px solid #2563eb !important;
-                color: #0f172a !important;
-            }
-
-            .cv-skill-tags span {
-                background: linear-gradient(135deg, #dbeafe, #f0f9ff) !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-                color-adjust: exact !important;
-                border: 1.5px solid #2563eb !important;
-                color: #0f172a !important;
-            }
-
-            .cv-availability {
-                background: linear-gradient(135deg, #f0f9ff, #e0f2fe) !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-                color-adjust: exact !important;
-                border: 2px solid #2563eb !important;
-                color: #0f172a !important;
-            }
-
-            .cv-quality {
-                background: linear-gradient(135deg, #f0f9ff, #f3f4f6) !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-                color-adjust: exact !important;
-                border-left: 4px solid #2563eb !important;
-            }
-
-            .cv-header h1,
-            .cv-title,
-            .cv-search,
-            .cv-bio,
-            .cv-contact {
-                color: white !important;
-            }
-
-            .cv-title {
-                color: #fbbf24 !important;
-            }
-
-            .cv-contact a {
-                color: #93c5fd !important;
-            }
-
-            .cv-section-title {
-                color: #0f172a !important;
-                border-bottom: 4px solid #2563eb !important;
-            }
-
-            .cv-footer p {
-                color: white !important;
-            }
-
-            .cv-quality-title {
-                color: #0f172a !important;
-            }
-
-            .cv-location {
-                color: #2563eb !important;
+            .job-item {
+                page-break-inside: avoid;
             }
         }
 
         /* RESPONSIVE */
         @media (max-width: 900px) {
-            .cv-body {
+            .cv-container {
                 grid-template-columns: 1fr;
-                gap: 30px;
-                padding: 30px;
+                height: auto;
             }
 
-            .cv-header {
-                grid-template-columns: 1fr;
-                gap: 20px;
-                text-align: center;
-                padding: 30px;
-            }
-
-            .cv-photo-container {
-                display: flex;
-                justify-content: center;
-            }
-
-            .cv-contact {
-                grid-template-columns: 1fr;
-            }
-
-            .cv-header h1 {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .cv-header {
-                padding: 25px;
-            }
-
-            .cv-body {
+            .cv-sidebar {
                 padding: 20px;
+                gap: 15px;
             }
 
-            .cv-skills-list {
-                grid-template-columns: 1fr;
+            .cv-main {
+                padding: 20px;
             }
         }
     </style>
@@ -523,192 +383,168 @@
     <button class="print-button no-print" onclick="window.print()">🖨️ Imprimer / Télécharger en PDF</button>
 
     <div class="cv-container">
-        <!-- EN-TÊTE AVEC PHOTO EN AVANT -->
-        <div class="cv-header">
-            <div class="cv-photo-container">
+        <!-- SIDEBAR GAUCHE -->
+        <div class="cv-sidebar">
+            <!-- PHOTO -->
+            <div class="cv-photo-section">
                 <img src="cvphoto.jpg" alt="Prince Orland FOKAM FOTSO" class="cv-photo">
             </div>
-            <div class="cv-header-info">
-                <h1>Prince Orland<br>FOKAM FOTSO</h1>
-                <p class="cv-title">👨‍💻 Développeur Full Stack | DevOps</p>
-                <p class="cv-search">🎯 Recherche d'alternance / Stage (3-4 mois)</p>
-                <p class="cv-bio">Étudiant en Mastère spécialisé en développement logiciel, passionné par la création d'applications web modernes, l'automatisation infrastructure et les technologies cloud.</p>
-                <div class="cv-contact">
-                    <span>📧 fokaprince39@gmail.com</span>
-                    <span>📱 +33 7 84 75 58 34</span>
-                    <span>🌐 <a href="https://portfolio-five-coral-18.vercel.app" target="_blank">portfolio-five-coral-18.vercel.app</a></span>
-                    <span>🔗 github.com/Fokam07</span>
+
+            <!-- CONTACT -->
+            <div class="sidebar-section">
+                <div class="sidebar-title">Contact</div>
+                <div class="contact-info">
+                    <div class="contact-label">Email</div>
+                    <div class="contact-value">fokaprince39@gmail.com</div>
+                    
+                    <div class="contact-label" style="margin-top: 8px;">Téléphone</div>
+                    <div class="contact-value">+33 7 84 75 58 34</div>
+                    
+                    <div class="contact-label" style="margin-top: 8px;">Ville</div>
+                    <div class="contact-value">Montpellier, France</div>
+                    
+                    <div class="contact-label" style="margin-top: 8px;">LinkedIn</div>
+                    <div class="contact-value">linkedin.com/in/prince-fokam</div>
+                    
+                    <div class="contact-label" style="margin-top: 8px;">GitHub</div>
+                    <div class="contact-value">github.com/Fokam07</div>
+                    
+                    <div class="contact-label" style="margin-top: 8px;">Portfolio</div>
+                    <div class="contact-value">portfolio-five-coral-18.vercel.app</div>
+                </div>
+            </div>
+
+            <!-- COMPÉTENCES -->
+            <div class="sidebar-section">
+                <div class="sidebar-title">Compétences</div>
+                <div class="skills-list">
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Next.js</span>
+                    <span class="skill-tag">TypeScript</span>
+                    <span class="skill-tag">Tailwind</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">NestJS</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Kubernetes</span>
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">Linux</span>
+                </div>
+            </div>
+
+            <!-- LANGUES -->
+            <div class="sidebar-section">
+                <div class="sidebar-title">Langues</div>
+                <div class="languages-list">
+                    <div class="language-item">• Français : Courant</div>
+                    <div class="language-item">• Anglais : Professionnel</div>
+                </div>
+            </div>
+
+            <!-- QUALITÉS -->
+            <div class="sidebar-section">
+                <div class="sidebar-title">Qualités</div>
+                <div class="qualities-list">
+                    <div class="quality-item">• Analyse</div>
+                    <div class="quality-item">• Autonomie</div>
+                    <div class="quality-item">• Rigueur</div>
+                    <div class="quality-item">• Teamwork</div>
                 </div>
             </div>
         </div>
 
-        <!-- CORPS DU CV -->
-        <div class="cv-body">
-            <!-- COLONNE GAUCHE -->
-            <div>
-                <!-- FORMATIONS -->
-                <section class="cv-section">
-                    <h2 class="cv-section-title">📚 FORMATIONS</h2>
-                    
-                    <div class="cv-item">
-                        <div class="cv-item-header">
-                            <h3>Mastère Développement Solutions Logiciel</h3>
-                            <span class="cv-date">Oct. 2025</span>
-                        </div>
-                        <p class="cv-location">🏫 Keyce Academy, Montpellier</p>
-                        <p class="cv-description">Formation spécialisée en architecture logicielle et DevOps/Cloud</p>
-                    </div>
-
-                    <div class="cv-item">
-                        <div class="cv-item-header">
-                            <h3>Licence Génie Logiciel</h3>
-                            <span class="cv-date">Oct. 2024</span>
-                        </div>
-                        <p class="cv-location">🏫 Keyce Informatique & IA, Douala</p>
-                        <p class="cv-description">Ingénierie logicielle et technologies de l'IA</p>
-                    </div>
-
-                    <div class="cv-item">
-                        <div class="cv-item-header">
-                            <h3>DUT Génie Informatique</h3>
-                            <span class="cv-date">Oct. 2021</span>
-                        </div>
-                        <p class="cv-location">🏫 IUT, Douala</p>
-                        <p class="cv-description">Formation générale en technologies informatiques</p>
-                    </div>
-                </section>
-
-                <!-- EXPÉRIENCES -->
-                <section class="cv-section">
-                    <h2 class="cv-section-title">💼 EXPÉRIENCE</h2>
-                    
-                    <div class="cv-item">
-                        <div class="cv-item-header">
-                            <h3>Génie Logiciel</h3>
-                            <span class="cv-date">Juin 2025</span>
-                        </div>
-                        <p class="cv-location">🏢 ASCENA CAMEROUN</p>
-                        <p class="cv-description">Application intelligente de supervision système</p>
-                    </div>
-
-                    <div class="cv-item">
-                        <div class="cv-item-header">
-                            <h3>Support Technique & Dev</h3>
-                            <span class="cv-date">Avr. 2023</span>
-                        </div>
-                        <p class="cv-location">🏢 Commercial Bank</p>
-                        <p class="cv-description">Support avancé et solutions informatiques</p>
-                    </div>
-
-                    <div class="cv-item">
-                        <div class="cv-item-header">
-                            <h3>Support Bureautique</h3>
-                            <span class="cv-date">Févr. 2023</span>
-                        </div>
-                        <p class="cv-location">🏢 NOFERCAM</p>
-                        <p class="cv-description">Gestion technique et support administratif</p>
-                    </div>
-                </section>
+        <!-- CONTENU PRINCIPAL -->
+        <div class="cv-main">
+            <!-- EN-TÊTE -->
+            <div class="cv-header-main">
+                <h1>PRINCE ORLAND<br>FOKAM FOTSO</h1>
+                <p class="cv-job-title">Développeur Full Stack & DevOps</p>
+                <p class="cv-search">🎯 Recherche d'alternance ou stage de 3 à 4 mois en développement Full Stack ou DevOps</p>
+                <p class="cv-bio">Étudiant en Mastère spécialisé en développement logiciel, passionné par la création d'applications web modernes, l'automatisation et les technologies cloud.</p>
             </div>
 
-            <!-- COLONNE DROITE -->
-            <div>
-                <!-- COMPÉTENCES -->
-                <section class="cv-section">
-                    <h2 class="cv-section-title">⚙️ COMPÉTENCES</h2>
-                    
-                    <div class="cv-skill-category">
-                        <h4>Frontend</h4>
-                        <div class="cv-skill-tags">
-                            <span>React</span>
-                            <span>TypeScript</span>
-                            <span>Tailwind CSS</span>
-                            <span>Next.js</span>
-                        </div>
+            <!-- EXPÉRIENCES PROFESSIONNELLES -->
+            <div class="section">
+                <h2 class="section-title">Expériences Professionnelles</h2>
+                
+                <div class="job-item">
+                    <div class="job-header">
+                        <div class="job-title">Génie Logiciel</div>
+                        <div class="job-date">Juin 2025 – Août 2025</div>
                     </div>
+                    <div class="job-company">ASCENA CAMEROUN — Douala</div>
+                    <ul class="bullet-list">
+                        <li>Développement d'une application intelligente de supervision système.</li>
+                        <li>Monitoring d'équipements et analyse des communications.</li>
+                        <li>Modélisation de systèmes en environnement critique.</li>
+                    </ul>
+                </div>
 
-                    <div class="cv-skill-category">
-                        <h4>Backend</h4>
-                        <div class="cv-skill-tags">
-                            <span>Node.js</span>
-                            <span>Nest.js</span>
-                            <span>Express.js</span>
-                            <span>Laravel</span>
-                        </div>
+                <div class="job-item">
+                    <div class="job-header">
+                        <div class="job-title">Support Technique & Développement</div>
+                        <div class="job-date">Avr. 2023 – Juin 2023</div>
                     </div>
+                    <div class="job-company">COMMERCIAL BANK — Douala</div>
+                    <ul class="bullet-list">
+                        <li>Support technique avancé et mise à jour RISKBEAC.</li>
+                        <li>Modélisation de bases de données et migration d'équipements.</li>
+                        <li>Support des workflows métier et assistance utilisateurs.</li>
+                    </ul>
+                </div>
 
-                    <div class="cv-skill-category">
-                        <h4>DevOps & Cloud</h4>
-                        <div class="cv-skill-tags">
-                            <span>Docker</span>
-                            <span>Kubernetes</span>
-                            <span>AWS</span>
-                            <span>GitHub Actions</span>
-                            <span>CI/CD</span>
-                        </div>
+                <div class="job-item">
+                    <div class="job-header">
+                        <div class="job-title">Support Bureautique</div>
+                        <div class="job-date">Févr. 2023 – Avr. 2023</div>
                     </div>
-
-                    <div class="cv-skill-category">
-                        <h4>Bases de Données</h4>
-                        <div class="cv-skill-tags">
-                            <span>PostgreSQL</span>
-                            <span>MongoDB</span>
-                            <span>Firebase</span>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- QUALITÉS -->
-                <section class="cv-section">
-                    <h2 class="cv-section-title">🎯 QUALITÉS</h2>
-                    <div class="cv-qualities">
-                        <div class="cv-quality">
-                            <span class="cv-quality-icon">🧠</span>
-                            <div>
-                                <p class="cv-quality-title">Esprit analytique</p>
-                                <p class="cv-quality-desc">Résolution efficace</p>
-                            </div>
-                        </div>
-                        <div class="cv-quality">
-                            <span class="cv-quality-icon">🚀</span>
-                            <div>
-                                <p class="cv-quality-title">Autonomie</p>
-                                <p class="cv-quality-desc">Travail indépendant</p>
-                            </div>
-                        </div>
-                        <div class="cv-quality">
-                            <span class="cv-quality-icon">⚙️</span>
-                            <div>
-                                <p class="cv-quality-title">Rigueur</p>
-                                <p class="cv-quality-desc">Code clean & structuré</p>
-                            </div>
-                        </div>
-                        <div class="cv-quality">
-                            <span class="cv-quality-icon">👥</span>
-                            <div>
-                                <p class="cv-quality-title">Collaboration</p>
-                                <p class="cv-quality-desc">Travail en équipe</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- DISPONIBILITÉ -->
-                <section class="cv-section">
-                    <h2 class="cv-section-title">📍 DISPONIBILITÉ</h2>
-                    <div class="cv-availability">
-                        <p><strong>Statut :</strong> Immédiate</p>
-                        <p><strong>Localisation :</strong> Mobile en France</p>
-                        <p><strong>Type :</strong> Alternance / Stage 3-4 mois</p>
-                    </div>
-                </section>
+                    <div class="job-company">NOFERCAM — Douala</div>
+                    <ul class="bullet-list">
+                        <li>Gestion du support technique et des documents administratifs.</li>
+                        <li>Support utilisateur et maîtrise de la suite Office.</li>
+                    </ul>
+                </div>
             </div>
-        </div>
 
-        <!-- FOOTER -->
-        <div class="cv-footer">
-            <p><strong>Prince Orland FOKAM FOTSO</strong> | Développeur Full Stack | DevOps</p>
-            <p>fokaprince39@gmail.com | +33 7 84 75 58 34 | portfolio-five-coral-18.vercel.app</p>
+            <!-- FORMATIONS -->
+            <div class="section">
+                <h2 class="section-title">Formations</h2>
+                
+                <div class="job-item">
+                    <div class="job-header">
+                        <div class="job-title">Mastère Dével. Solutions Logicielles</div>
+                        <div class="job-date">2025 – Présent</div>
+                    </div>
+                    <div class="job-company">Keyce Academy — Montpellier, France</div>
+                    <p class="job-desc">Spécialisation Architecture Système, Cloud & DevOps.</p>
+                </div>
+
+                <div class="job-item">
+                    <div class="job-header">
+                        <div class="job-title">Licence Génie Logiciel</div>
+                        <div class="job-date">2024 – 2025</div>
+                    </div>
+                    <div class="job-company">Keyce Informatique & IA — Douala</div>
+                </div>
+
+                <div class="job-item">
+                    <div class="job-header">
+                        <div class="job-title">DUT Génie Informatique</div>
+                        <div class="job-date">2021 – 2023</div>
+                    </div>
+                    <div class="job-company">IUT de Douala — Cameroun</div>
+                </div>
+            </div>
+
+            <!-- DISPONIBILITÉ -->
+            <div class="section">
+                <h2 class="section-title">Disponibilité</h2>
+                <div class="availability">
+                    <strong>Immédiate</strong> | Mobile en France entière
+                </div>
+            </div>
         </div>
     </div>
 </body>

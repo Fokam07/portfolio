@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générer CV en PDF</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+            max-width: 500px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        button {
+            padding: 15px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        .btn-generate {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+        .btn-generate:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.6);
+        }
+        .btn-back {
+            background: #f0f0f0;
+            color: #333;
+        }
+        .btn-back:hover {
+            background: #e0e0e0;
+        }
+        .loading {
+            display: none;
+            margin-top: 20px;
+            color: #667eea;
+            font-weight: 600;
+        }
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📄 Générer CV en PDF</h1>
+        <p>Cliquez sur le bouton ci-dessous pour générer et télécharger votre CV au format PDF avec le design professionnel complet.</p>
+        
+        <button class="btn-generate" onclick="generatePDF()">
+            🖨️ Générer et Télécharger en PDF
+        </button>
+        
+        <button class="btn-back" onclick="window.location.href='/'">
+            ← Retour au Portfolio
+        </button>
+        
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Génération du PDF en cours...</p>
+        </div>
+    </div>
+
+    <script>
+        async function generatePDF() {
+            const btn = event.target;
+            const loading = document.getElementById('loading');
+            
+            try {
+                btn.disabled = true;
+                loading.style.display = 'block';
+                
+                // Charger le CV HTML
+                const response = await fetch('/cv.html');
+                const htmlContent = await response.text();
+                
+                // Parser le HTML
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(htmlContent, 'text/html');
+                
+                // Supprimer le bouton d'impression
+                const printBtn = doc.querySelector('.no-print');
+                if (printBtn) printBtn.remove();
+                
+                // Obtenir le conteneur du CV
+                const cvContainer = doc.querySelector('.cv-container');
+                
+                const options = {
+                    margin: 0,
+                    filename: 'CV_Prince_Orland_FOKAM_FOTSO.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { 
+                        scale: 2,
+                        useCORS: true,
+                        logging: false
+                    },
+                    jsPDF: { 
+                        format: 'a4', 
+                        orientation: 'portrait',
+                        unit: 'mm'
+                    }
+                };
+                
+                await html2pdf().set(options).from(cvContainer).save();
+                
+                loading.style.display = 'none';
+                btn.disabled = false;
+                
+                // Message de succès
+                alert('✅ PDF généré avec succès!\nTéléchargement en cours...');
+                
+            } catch (error) {
+                console.error('Erreur:', error);
+                loading.style.display = 'none';
+                btn.disabled = false;
+                alert('❌ Erreur lors de la génération du PDF: ' + error.message);
+            }
+        }
+    </script>
+</body>
+</html>
