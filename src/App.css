@@ -1,0 +1,8 @@
+/* === APP STYLES === */
+.app {
+  width: 100%;
+  overflow-x: hidden;
+  background: var(--primary-dark);
+  color: var(--text-light);
+  min-height: 100vh;
+}

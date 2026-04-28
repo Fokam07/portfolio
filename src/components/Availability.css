@@ -1,0 +1,118 @@
+/* === AVAILABILITY SECTION === */
+.availability {
+  padding: 80px 2rem;
+  background: linear-gradient(135deg, #0F172A 0%, #1a1a3f 100%);
+}
+
+.availability-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.availability-card {
+  background: linear-gradient(135deg, rgba(0, 200, 150, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+  border: 2px solid rgba(0, 200, 150, 0.3);
+  border-radius: 16px;
+  padding: 50px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 40px rgba(0, 200, 150, 0.1);
+}
+
+.availability-header h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  background: linear-gradient(135deg, var(--accent-green), var(--accent-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 30px;
+}
+
+.availability-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.availability-item {
+  padding: 25px;
+  background: rgba(31, 41, 55, 0.5);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 12px;
+  transition: all var(--transition-smooth);
+}
+
+.availability-item:hover {
+  border-color: var(--accent-green);
+  background: rgba(0, 200, 150, 0.05);
+  transform: translateY(-5px);
+}
+
+.item-icon {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.availability-item h3 {
+  color: var(--accent-green);
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.availability-item p {
+  color: var(--text-light);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.availability-highlight {
+  padding: 20px;
+  background: rgba(0, 200, 150, 0.1);
+  border-left: 4px solid var(--accent-green);
+  border-radius: 8px;
+  margin-top: 30px;
+}
+
+.availability-highlight p {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .availability {
+    padding: 60px 1.5rem;
+  }
+
+  .availability-card {
+    padding: 30px;
+  }
+
+  .availability-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .availability-item {
+    padding: 20px;
+  }
+
+  .item-icon {
+    font-size: 2rem;
+  }
+
+  .availability-item h3 {
+    font-size: 1rem;
+  }
+
+  .availability-item p {
+    font-size: 0.95rem;
+  }
+
+  .availability-highlight p {
+    font-size: 1rem;
+  }
+}

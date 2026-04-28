@@ -1,0 +1,133 @@
+/* === ABOUT SECTION === */
+.about {
+  padding: 100px 2rem;
+  background: linear-gradient(135deg, #0F172A 0%, #1a1a3f 50%, #0F172A 100%);
+  position: relative;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* === ABOUT TEXT === */
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.about-intro,
+.about-main,
+.about-vision {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-light);
+}
+
+.about-intro {
+  font-size: 1.15rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--accent-green), var(--accent-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.about-main {
+  color: var(--text-gray);
+}
+
+.about-vision {
+  padding: 20px;
+  border-left: 3px solid var(--accent-green);
+  background: rgba(0, 200, 150, 0.05);
+  border-radius: 8px;
+}
+
+/* === QUALITIES GRID === */
+.qualities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.quality-card {
+  padding: 30px;
+  background: rgba(31, 41, 55, 0.5);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 12px;
+  text-align: center;
+  transition: all var(--transition-smooth);
+  backdrop-filter: blur(10px);
+}
+
+.quality-card:hover {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: var(--accent-blue);
+  transform: translateY(-5px);
+}
+
+.quality-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+.quality-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, var(--accent-green), var(--accent-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.quality-card p {
+  color: var(--text-gray);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .about {
+    padding: 60px 1.5rem;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .qualities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+  }
+}
