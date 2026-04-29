@@ -21,7 +21,10 @@ export default function Hero() {
 
           <div className="hero-buttons scroll-reveal">
             <button className="btn btn-primary" onClick={() => {
-              window.open('/cv.html', '_blank');
+              const link = document.createElement('a');
+              link.href = '/CV_Prince_Orland_FOKAM.pdf';
+              link.download = 'CV_Prince_Orland_FOKAM.pdf';
+              link.click();
             }}>
               <span className="btn-icon">📄</span> Télécharger mon CV
             </button>
